@@ -1,0 +1,37 @@
+import tkinter as tk
+from tkinter import filedialog
+from pdf2docx import Converter
+
+def select_file_and_convert():
+    # Create a file explorer window
+    root = tk.Tk()
+    root.withdraw()  # Hide the root window
+
+    # Prompt the user to select a PDF file
+    print("Please select a file that you would like to convert.")
+    file_path = filedialog.askopenfilename(
+        title="Select a PDF file",
+        filetypes=[("PDF files", "*.pdf")]
+    )
+
+    if file_path:
+        # Prompt the user to choose where to save the Word document
+        print("Please choose where you want to save the file.")
+        output_path = filedialog.asksaveasfilename(
+            defaultextension=".docx",
+            filetypes=[("Word documents", "*.docx")],
+            initialfile=file_path.replace('.pdf', '.docx'),
+            title="Save Word Document"
+        )
+
+        if output_path:
+            # Convert the PDF to a Word document
+            converter = Converter(file_path)
+            converter.convert(output_path, start=0, end=None)
+            converter.close()
+
+            print(f"Conversion completed. Word document saved as: {output_path}")
+
+if __name__ == "__main__":
+    select_file_and_convert()
+    input("Press Enter to exit...")
