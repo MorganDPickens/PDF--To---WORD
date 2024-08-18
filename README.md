@@ -5,4 +5,4 @@
 
 # PDF--To---WORD 
 
-hello everyone i was tired of people tyring to charge money for just a simple script ot turn your pdf document into a word document like what........ use the code provided above. Make sure you save this as a py file have a grat day!
+hello everyone i was tired of people tyring to charge money for just a simple script ot turn your pdf document into a word document like what........ use the code provided above. Make sure you save this as a py file have a great day!
